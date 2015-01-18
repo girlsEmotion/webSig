@@ -7,15 +7,21 @@ requirejs.config({
     'paths' : {
         'jquery' : '../../bower_components/jquery/dist/jquery',
         'async' : '../../bower_components/async/lib/async',
-        'angular' : '../../bower_components/angular/angular'
+        'angular' : '../../bower_components/angular/angular',
+        'angular-route' : '../../bower_components/angular-route/angular-route',
+        'angularAMD' : '../../bower_components/angularAMD/angularAMD'
     },
     'shim' : {
-
+        'angular-route' : ['angular'],
+        'angularAMD' : ['angular']
     },
     'map' : {
         '*' : {
-            'Module' : '../modules'
+            'Controller' : '../controllers',
+            'Service' : '../services',
+            'Filter' : '../filters',
+            'Directive' : '../directives'
         }
     },
-    'deps' : ['main']   //이거 자체로 디펜던시를 가지는거
+    'deps' : ['app']   //디펜던시
 });
